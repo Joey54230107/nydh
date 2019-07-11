@@ -1,0 +1,391 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+}
+
+*{
+	box-sizing: border-box;
+	width: 100%;
+	height: inherit;
+	font-size: inherit;
+	text-align: inherit;
+	overflow: visible;
+	border: none;
+	outline: none;
+	cursor: default;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: transparent;
+}
+
+form{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+input{
+	cursor: text;
+	border: none;
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+
+ul, ol, li{
+	list-style-type: none;
+}
+
+p{
+  height: auto;
+}
+
+span,a,label{
+  height: auto;
+  width: auto;
+}
+
+button{
+  border: none;
+}
+
+.auto-w{
+  width: auto;
+}
+
+.auto-fill{
+	flex: 1.0;
+}
+
+@mixin box{
+	display: flex;
+	flex-wrap: nowrap;
+  flex-shrink: 0; //不挤压
+}
+@mixin box-hori{
+	@include box;
+	width: 100%;
+	flex-flow: row;
+}
+@mixin box-hori-left{
+	@include box-hori;
+	justify-content: flex-start;
+}
+@mixin box-hori-left-top{
+	@include box-hori-left;
+	align-items: flex-start;
+}
+@mixin box-hori-left-middle{
+	@include box-hori-left;
+	align-items: center;
+}
+@mixin box-hori-left-bottom{
+	@include box-hori-left;
+	align-items: flex-end;
+}
+
+@mixin box-hori-center{
+	@include box-hori;
+	justify-content: center;
+}
+@mixin box-hori-center-top{
+	@include box-hori-center;
+	align-items: flex-start;
+}
+@mixin box-hori-center-middle{
+	@include box-hori-center;
+	align-items: center;
+}
+@mixin box-hori-center-bottom{
+	@include box-hori-center;
+	align-items: flex-end;
+}
+
+@mixin box-hori-right{
+	@include box-hori;
+	justify-content: flex-end;
+}
+@mixin box-hori-right-top{
+	@include box-hori-right;
+	align-items: flex-start;
+}
+@mixin box-hori-right-middle{
+	@include box-hori-right;
+	align-items: center;
+}
+@mixin box-hori-right-bottom{
+	@include box-hori-right;
+	align-items: flex-end;
+}
+
+
+@mixin box-vert{
+	@include box;
+	flex-flow: column nowrap;
+}
+@mixin box-vert-left{
+	@include box-vert;
+	width: 100%;
+	height: 100%;
+	align-items: flex-start;
+}
+@mixin box-vert-left-top{
+	@include box-vert-left;
+	justify-content: flex-start;
+}
+@mixin box-vert-left-middle{
+	@include box-vert-left;
+	justify-content: center;
+}
+@mixin box-vert-left-bottom{
+	@include box-vert-left;
+	justify-content: flex-end;
+}
+
+@mixin box-vert-center{
+	@include box-vert;
+	align-items: center;
+}
+@mixin box-vert-center-top{
+	@include box-vert-center;
+	justify-content: flex-start;
+}
+@mixin box-vert-center-middle{
+	@include box-vert-center;
+	justify-content: center;
+}
+@mixin box-vert-center-bottom{
+	@include box-vert-center;
+	justify-content: flex-end;
+}
+
+@mixin box-vert-right{
+	@include box-vert;
+	align-items: flex-end;
+}
+@mixin box-vert-right-top{
+	@include box-vert-right;
+	justify-content: flex-start;
+}
+@mixin box-vert-right-middle{
+	@include box-vert-right;
+	justify-content: center;
+}
+@mixin box-vert-right-bottom{
+	@include box-vert-right;
+	justify-content: flex-end;
+}
+
+$normalBgColor: #f0f0f0;  //主界面浅灰背景色
+$red: #f85959;  //主界面红色
+$blue: #008de1; //主界面蓝色
+$textColor: #666; //一般文字颜色
+$textStrongColor: #333; //一般强调文字颜色
+$textLessColor: #999; //一般减淡文字颜色
+
+.full{
+  width: 100%;
+  height: 100%;
+}
+
+.auto-h{
+  height: auto;
+}
+
+button{
+  &.red-btn{
+    @include box-vert-center-middle;
+    width: 100%;
+    background: #ff7f66;
+    //background: linear-gradient(to left,#E45E5C,#F8B58E);
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+
+    &:active{
+      opacity: .8;
+    }
+  }
+}
+
+.hori-top{
+  @include box-hori-left-top;
+}
+
+.hori-middle{
+  @include box-hori-left-middle;
+}
+
+.hori-bottom{
+  @include box-hori-left-bottom;
+}
+
+.vert-top{
+  @include box-vert-left-top;
+}
+
+.vert-middle{
+  @include box-vert-left-middle;
+}
+
+.vert-bottom{
+  @include box-vert-left-bottom;
+}
+
+.photo-man-case{
+	//border-radius: 100px;
+  background: url("~@/assets/img/man.png") center center/cover no-repeat;
+}
+.photo-woman-case{
+	//border-radius: 100px;
+  background: url("~@/assets/img/woman.png") center center/cover no-repeat;
+}
+
+.page-header-case{
+	@include box-hori-left-middle;
+	height: 50px;
+	background: #f85959;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	color: #fff;
+	text-align: center;
+
+  &.simple{
+    background: #fff;
+    color: #333;
+  }
+
+	.header-icon{
+		@include box-hori-center-middle;
+		width: auto;
+		height: 50px;
+		font-size: 24px;
+		line-height: 50px;
+		overflow: visible;
+		position: absolute;
+		top: 0;
+		z-index: 5;
+
+		&.icon-let-arr{
+			left: 5px;
+		}
+		&.create{
+			font-size: 16px;
+			right: 10px;
+		}
+
+		label{
+			margin-top: -1px;
+			font-size: 16px;
+			width: auto;
+			border-bottom: solid .5px #fff;
+
+			&.blocker{
+				height: 20px;
+				//background: rgba(223, 97, 88, .85);
+				line-height: 20px;
+				padding: 0 0 2px;
+				border-radius: 0;
+				color: #fff;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.header-text-case{
+		@include box-hori-center-middle;
+		height: auto;
+		font-size: 18px;
+    font-weight: bold;
+	}
+
+	&.c-blank-header-case{
+		background: #fff;
+		color: #666;
+
+		.header-text-case{
+			@include box-hori-center-middle;
+			height: auto;
+			font-size: 18px;
+			color: #333;
+		}
+	}
+}
+
+.border-radius-top{
+	border-radius: 9px 9px 0 0;
+}
+
+.border-radius-btm{
+	border-radius: 0 0 9px 9px;
+}
+
+.border-radius{
+	border-radius: 9px;
+}
+
+.label-txt{
+	font-size: 14px;
+	color: #999;
+}
+
+.comm-btn{
+  @include box-hori-center-middle;
+  height: 42px;
+  width: auto;
+  padding: 0 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+	
+	&.comm-blue-btn{
+		background: $blue;
+		color: #fff;
+	}
+	&.comm-red-btn{
+		background: $red;
+		color: #fff;
+	}
+	&.plain{
+		background: transparent;
+		border: solid .5px $blue;
+		color: $blue;
+	}
+	
+  &.comm-blue-btn{
+    background: $blue;
+    color: #fff;
+
+    &.plain{
+      background: transparent;
+      border: solid .5px $blue;
+      color: $blue;
+    }
+  }
+	
+  &.comm-red-btn{
+    background: $red;
+    color: #fff;
+  }
+
+  &:active{
+    opacity: .8;
+  }
+}
+
+.slider-container-case{
+  transition: transform .3s, opacity .3s;
+}

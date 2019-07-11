@@ -1,0 +1,197 @@
+html, body{
+	width: 100%;
+	height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+*{
+  oveflow-x: hidden;
+	width: 100%;
+	box-sizing: border-box;
+	height: inherit;
+	font-size: inherit;
+	color: inherit;
+	padding: 0;
+	margin: 0;
+  border-width: 0;
+	appearance: none;
+	border: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+	padding: 0;
+	font-weight: normal;
+	height: auto;
+}
+
+ul, ol, li{
+	list-style-type: none;
+}
+
+div,p,article,section{
+	height: auto;
+}
+
+input{
+	outline: none;
+	border: none;
+	margin: 0;
+}
+
+input::-webkit-input-placeholder{
+  color:#e9e9e9;
+  font-size:14px;
+}
+
+i{
+  font-style: normal;
+}
+
+.auto-fill{
+	flex: 1.0;
+}
+
+@mixin box{
+	display: flex;
+	flex-wrap: nowrap;
+}
+@mixin box-hori{
+	@include box;
+	width: 100%;
+	flex-flow: row;
+}
+@mixin box-hori-left{
+	@include box-hori;
+	justify-content: flex-start;
+}
+@mixin box-hori-left-top{
+	@include box-hori-left;
+	align-items: flex-start;
+}
+@mixin box-hori-left-middle{
+	@include box-hori-left;
+	align-items: center;
+}
+@mixin box-hori-left-bottom{
+	@include box-hori-left;
+	align-items: flex-end;
+}
+
+@mixin box-hori-center{
+	@include box-hori;
+	justify-content: center;
+}
+@mixin box-hori-center-top{
+	@include box-hori-center;
+	align-items: flex-start;
+}
+@mixin box-hori-center-middle{
+	@include box-hori-center;
+	align-items: center;
+}
+@mixin box-hori-center-bottom{
+	@include box-hori-center;
+	align-items: flex-end;
+}
+
+@mixin box-hori-right{
+	@include box-hori;
+	justify-content: flex-end;
+}
+@mixin box-hori-right-top{
+	@include box-hori-right;
+	align-items: flex-start;
+}
+@mixin box-hori-right-middle{
+	@include box-hori-right;
+	align-items: center;
+}
+@mixin box-hori-right-bottom{
+	@include box-hori-right;
+	align-items: flex-end;
+}
+
+
+@mixin box-vert{
+	@include box;
+	flex-flow: column nowrap;
+}
+@mixin box-vert-left{
+	@include box-vert;
+	width: 100%;
+	height: 100%;
+	align-items: flex-start;
+}
+@mixin box-vert-left-top{
+	@include box-vert-left;
+	justify-content: flex-start;
+}
+@mixin box-vert-left-middle{
+	@include box-vert-left;
+	justify-content: center;
+}
+@mixin box-vert-left-bottom{
+	@include box-vert-left;
+	justify-content: flex-end;
+}
+
+@mixin box-vert-center{
+	@include box-vert;
+	align-items: center;
+}
+@mixin box-vert-center-top{
+	@include box-vert-center;
+	justify-content: flex-start;
+}
+@mixin box-vert-center-middle{
+	@include box-vert-center;
+	justify-content: center;
+}
+@mixin box-vert-center-bottom{
+	@include box-vert-center;
+	justify-content: flex-end;
+}
+
+@mixin box-vert-right{
+	@include box-vert;
+	align-items: flex-end;
+}
+@mixin box-vert-right-top{
+	@include box-vert-right;
+	justify-content: flex-start;
+}
+@mixin box-vert-right-middle{
+	@include box-vert-right;
+	justify-content: center;
+}
+@mixin box-vert-right-bottom{
+	@include box-vert-right;
+	justify-content: flex-end;
+}
+
+.page{
+	height: 100%;
+	width: 100%;
+	position: relative;
+
+  .mui-bar{
+    padding: 0;
+  }
+}
+
+.mui-icon{
+  font-size: inherit;
+  height: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.tal{text-align: left;}
+.tac{text-align: center;}
+.tar{text-align: right;}
+
+
+
